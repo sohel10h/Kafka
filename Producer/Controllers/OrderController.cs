@@ -17,7 +17,7 @@ namespace Producer.Controllers
         {
             var config = new ProducerConfig
             {
-                BootstrapServers = "localhost:9092", // Replace with your Kafka broker address
+                BootstrapServers = "localhost:9093", // Replace with your Kafka broker address
             };
             producer = new ProducerBuilder<string, string>(config).Build();
         }
@@ -41,7 +41,6 @@ namespace Producer.Controllers
             {
                 return BadRequest($"Error producing message: {ex.Message}");
             }
-            return Ok();
         }
 
 
